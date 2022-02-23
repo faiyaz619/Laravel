@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', [StudentController::class,'index'])->name('home');
+Route::get('/blog', [BlogController::class,'index'])->name('blog');
 Route::post('/new-student', [StudentController::class,'create'])->name('new-student');
+Route::post('/blog', [BlogController::class,'create'])->name('blog');
 
 

@@ -17,8 +17,9 @@
         <a href="" class="navbar-brand">LOGO</a>
         <div class="navbar-nav">
             <ul class="navbar-nav">
-                <li><a href="" class="nav-link">Add Student</a></li>
+                <li><a href="{{route('home')}}" class="nav-link">Add Student</a></li>
                 <li><a href="" class="nav-link">Manage Student</a></li>
+                <li><a href="{{route('blog')}}" class="nav-link">Add Blog</a></li>
                 <li><a href="" class="nav-link">login</a></li>
             </ul>
         </div>
