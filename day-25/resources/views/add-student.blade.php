@@ -9,7 +9,7 @@
                 <div class="card bg-dark text-white">
                     <div class="card-header text-center font-weight-bolder text-uppercase">Add Student Form</div>
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="{{route('new-student')}}" method="POST">
                             @csrf
                             <div class="form-group row">
                                 <label  class="col-form-label col-md-3">Name :</label>

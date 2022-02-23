@@ -14,6 +14,6 @@ class StudentController extends Controller
     }
     public function create(Request $request)
     {
-        return $request;
+        return $request->all();
     }
 }
