@@ -18,8 +18,9 @@
         <div class="navbar-nav">
             <ul class="navbar-nav">
                 <li><a href="{{route('home')}}" class="nav-link">Add Student</a></li>
-                <li><a href="" class="nav-link">Manage Student</a></li>
+                <li><a href="{{route('manage-student')}}" class="nav-link">Manage Student</a></li>
                 <li><a href="{{route('blog')}}" class="nav-link">Add Blog</a></li>
+                <li><a href="{{route('manage-blog')}}" class="nav-link">Manage Blog</a></li>
                 <li><a href="" class="nav-link">login</a></li>
             </ul>
         </div>

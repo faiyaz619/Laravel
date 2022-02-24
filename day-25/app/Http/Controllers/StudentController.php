@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    protected $students;
     protected $student;
     public function index()
     {
@@ -21,6 +22,31 @@ class StudentController extends Controller
         $this->student->save();
 
         return redirect()->back()->with('message','Data has been saved successfully.');
+    }
+    public function update(Request $request ,$id)
+    {
+        $this->student=Student::find($id);
+        $this->student->name    =$request->name;
+        $this->student->email   =$request->email;
+        $this->student->mobile  =$request->mobile;
+        $this->student->save();
+        return redirect('/manage-student')->with('message','Student Info has been updated successfully.');
+    }
+    public function delete($id)
+    {
+        $this->student=Student::find($id);
+        $this->student=delete($id);
+        return redirect('/manage-student')->with('message','Student Info has been delected successfully.');
+    }
 
+    public function manage()
+    {
+        $this->students=Student::orderBy('id','desc')->get();
+        return view('manage-student',['students'=>$this->students]);
+    }
+    public function edit($id)
+    {
+        $this->student=Student::find($id);
+        return view('edit-student',['student' => $this->student]);
     }
 }
