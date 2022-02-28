@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card bg-dark text-white">
-                        <div class="card-header bg-primary text-white text-uppercase text-center font-weight-bolder">All Student</div>
+                        <div class="card-header bg-primary text-white text-uppercase text-center font-weight-bolder">All Product</div>
                         <div class="card-body">
                             <h4 class="text-center text-success">{{Session::get('message')}}</h4>
                             <table class="table table-bordered table-dark table-hover">
@@ -21,7 +21,7 @@
                                     <th>Product Brand</th>
                                     <th>Product Price</th>
                                     <th>Product Decsription</th>
-{{--                                    <th>Product Image</th>--}}
+                                    <th>Product Image</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -35,10 +35,11 @@
                                         <td>{{$product->brand}}</td>
                                         <td>{{$product->price}}</td>
                                         <td>{{$product->description}}</td>
+                                        <td><img src="{{asset($product->image)}}"  height="100px" width="100px" alt=""></td>
                                         <td>
-                                            <a href="{{route('edit-student',['id'=> $product->id])}}" class="btn btn-success btn-sm "><i class="fa fa-edit"></i></a>
-                                            <a href="" class="btn btn-danger btn-sm float-right" onclick="deleteStudent({{$product->id}})"><i class="fa fa-trash"></i></a>
-                                            <form action="{{route('delete-student',['id'=> $product->id])}}" id="deleteStudentForm{{$product->id}}" method="POST">
+                                            <a href="{{route('edit-product',['id'=> $product->id])}}" class="btn btn-success btn-sm "><i class="fa fa-edit"></i></a>
+                                            <a href="#" class="btn btn-danger btn-sm float-right" onclick="deleteProduct({{$product->id}})"><i class="fa fa-trash"></i></a>
+                                            <form action="{{route('delete-product',['id'=> $product->id])}}" id="deleteProductForm{{$product->id}}" method="POST">
                                                 @csrf
                                             </form>
                                         </td>
@@ -53,13 +54,13 @@
         </div>
     </section>
     <script>
-        function deleteStudent(id)
+        function deleteProduct(id)
         {
             event.preventDefault();
-            var check=confirm('Are you sure to delete this student ?');
+            var check=confirm('Are you sure to delete this Product ?');
             if (check)
             {
-                document.getElementById('deleteStudentForm'+id).submit();
+                document.getElementById('deleteProductForm'+id).submit();
             }
         }
 

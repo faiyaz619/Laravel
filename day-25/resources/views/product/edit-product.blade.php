@@ -7,10 +7,10 @@
         <div class="container">
             <div class="col-md-8 mx-auto">
                 <div class="card bg-dark text-white">
-                    <div class="card-header text-center font-weight-bolder text-uppercase">Edit Student Form</div>
+                    <div class="card-header text-center font-weight-bolder text-uppercase">Edit Product Details</div>
                     <div class="card-body">
                         <h4 class="text-center text-success">{{Session::get('message')}}</h4>
-                        <form action="{{route('edit-product',['id' =>$product->id])}}" method="POST">
+                        <form action="{{route('update-product',['id' =>$product->id])}}" method="POST">
                             @csrf
                             <div class="form-group row">
                                 <label for="" class="col-md-3">Product Name</label>
@@ -37,21 +37,22 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-md-3">Product Description :</label>
+                                <label for="" class="col-md-3">Product Description:</label>
                                 <div class="col-md-9">
-                                    <textarea class="form-control" value="{{$product->description}}" name="description"></textarea>
+                                    <textarea class="form-control" value="" name="description">{{$product->description}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-md-3">Product Image</label>
                                 <div class="col-md-9">
-                                    <input type="file" name="image" value="{{$product->image}}"class="form-control-file"/>
+                                    <input type="file" name="image" value="{{asset($product->image)}}"class="form-control-file"/>
+                                    <img src="{{asset($product->image)}}" width="100px" height="100px" alt="" class="pt-2">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-md-3"></label>
+                                <label  class="col-form-label col-md-3"></label>
                                 <div class="col-md-9">
-                                    <button type="submit" class="btn btn-outline-success" name="submit-btn" value="Create New Prouct"/></button>
+                                    <input type="submit" class="btn btn-success" value="Update Product"/>
                                 </div>
                             </div>
                         </form>

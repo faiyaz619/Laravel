@@ -3,12 +3,12 @@
     Add Product
 @endsection
 @section('body')
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-info">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <div class="card">
-                        <div class="card-header">
+                    <div class="card bg-dark text-white">
+                        <div class="card-header bg-primary text-center">
                           Add Product From
                         </div>
                         <h4 class="text-center text-success">{{Session::get('message')}}</h4>
@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="" class="col-md-3">Product Description :</label>
+                                    <label for="" class="col-md-3">Product Description:</label>
                                     <div class="col-md-9">
                                         <textarea class="form-control" name="description"></textarea>
                                     </div>

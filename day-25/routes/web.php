@@ -31,8 +31,8 @@ Route::get('/edit-blog/{id}', [BlogController::class,'edit'])->name('edit-blog')
 Route::get('/add-product', [ProductController::class,'index'])->name('add-product');
 Route::post('/add-product', [ProductController::class,'create'])->name('add-product');
 Route::get('/manage-product', [ProductController::class,'manage'])->name('manage-product');
-Route::get('/edit-student/{id}', [StudentController::class,'edit'])->name('edit-student');
-Route::post('/update-student/{id}', [StudentController::class,'update'])->name('update-student');
-Route::post('/delete-student/{id}', [StudentController::class,'delete'])->name('delete-student');
+Route::get('/edit-product/{id}', [ProductController::class,'edit'])->name('edit-product');
+Route::post('/update-product/{id}', [ProductController::class,'update'])->name('update-product');
+Route::post('/delete-product/{id}', [ProductController::class,'delete'])->name('delete-product');
 
 
